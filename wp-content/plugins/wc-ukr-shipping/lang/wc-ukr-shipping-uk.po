@@ -1,0 +1,258 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+# Options page
+msgid "Settings"
+msgstr "Налаштування"
+
+msgid "Documentation"
+msgstr "Документація"
+
+msgid "Save"
+msgstr "Зберегти"
+
+msgid "General"
+msgstr "Загальні"
+
+msgid "Shipping"
+msgstr "Доставка"
+
+msgid "Translates"
+msgstr "Переклади"
+
+msgid "API key for Nova Poshta"
+msgstr "API ключ Нової Пошти"
+
+msgid "Display language of cities and departments"
+msgstr "Мова відображення міст та відділень"
+
+msgid "Russian"
+msgstr "Російська"
+
+msgid "Ukrainian"
+msgstr "Українська"
+
+msgid "Use new UI"
+msgstr "Використовувати новий UI"
+
+msgid ""
+"We recommend to enable this setting as the old UI will be removed in version "
+"2.0"
+msgstr ""
+"Ми рекомендуємо ввімкнути це налаштування, так як старий UI буде видалений у "
+"версії 2.0"
+
+msgid "Show poshtomats"
+msgstr "Показувати поштомати"
+
+msgid "Load translates from"
+msgstr "Завантажувати переклади з"
+
+msgid "Plugin settings"
+msgstr "Налаштувань плагіну"
+
+msgid "Wordpress localization files"
+msgstr "Файли локалізації Wordpress"
+
+msgid ""
+"If you are using language plugins such as WPML or Polylang - select "
+"\"Wordpress localization files\" option"
+msgstr ""
+"Якщо ви використовуєте плагіни локалізації, такі як WPML або Polylang, то "
+"виберіть опцію \"Файли локалізації Wordpress\""
+
+msgid "Color of spinner in frontend"
+msgstr "Колір спінера у frontend"
+
+# Warehouse loader
+msgid "Warehouses data of Nova Poshta"
+msgstr "Дані відділень Нової Пошти"
+
+msgid "Last update date:"
+msgstr "Дата останнього оновлення:"
+
+msgid "Status:"
+msgstr "Статус:"
+
+msgid "Not completed"
+msgstr "Не завершено"
+
+msgid "Completed"
+msgstr "Завершено"
+
+msgid "Unknown"
+msgstr "Невідомий"
+
+msgid "Update warehouses"
+msgstr "Оновити відділення"
+
+msgid "Continue update"
+msgstr "Продовжити оновлення"
+
+msgid "Load areas..."
+msgstr "Завантаження областей..."
+
+msgid "Load cities..."
+msgstr "Завантаження міст..."
+
+msgid "Load warehouses..."
+msgstr "Завантаження відділень..."
+
+msgid "Warehouses db updated successfully"
+msgstr "Дані відділень успішно оновлені"
+
+# End warehouse loader
+msgid "Shipping cost"
+msgstr "Вартість доставки"
+
+msgid "Shipping block position on checkout page"
+msgstr "Позиція блока доставки на сторінці чекаута"
+
+msgid "Default section"
+msgstr "Основна секція"
+
+msgid "Additional section"
+msgstr "Додаткова секція"
+
+msgid "Enable address shipping"
+msgstr "Увімкнути адресну доставку"
+
+msgid "Save last customer address"
+msgstr "Зберігати останню адресу користувача"
+
+msgid "This option is not working with old UI"
+msgstr "Ця опція не працює зі старим UI"
+
+msgid "Shipping method name"
+msgstr "Назва способу доставки"
+
+msgid "Shipping block title"
+msgstr "Заголовок блоку доставки"
+
+msgid "Placeholder of select area field"
+msgstr "Placeholder вибору області"
+
+msgid "Placeholder of select city field"
+msgstr "Placeholder вибору міста"
+
+msgid "Placeholder of select warehouse field"
+msgstr "Placeholder вибору відділення"
+
+msgid "Label of address selector"
+msgstr "Checkbox адресної доставки"
+
+msgid "Placeholder of address field"
+msgstr "Placeholder адресної доставки"
+
+msgid "Empty result text"
+msgstr "Текст порожнього результату пошуку"
+
+msgid "Settings saved successfully!"
+msgstr "Налаштування успішно збережені!"
+
+# PRO features
+msgid "Get more features from our PRO version"
+msgstr "Отримайте більше можливостей від нашої PRO версії"
+
+msgid "Full address shipping integration (using Nova Poshta address API)"
+msgstr ""
+"Повноцінна інтеграція адресної доставки (використання онлайн довідника Нової "
+"Пошти)"
+
+msgid ""
+"Automatic calculation of shipping costs. Supporting W2W, W2D and COD "
+"delivery calculation"
+msgstr ""
+"Автоматичний розрахунок вартості доставки. Підтримка типів: Відділення-"
+"Відділення, Відділення-Адреса, а також зворотної доставки"
+
+msgid "Shipping calculation based on order total"
+msgstr "Розрахунок вартості доставки в залежності від суми замовлення"
+
+msgid "Ability to customize separated shipping costs for address shipping"
+msgstr ""
+"Можливість налаштування окремого розрахунку вартості для адресної доставки"
+
+msgid "Ability to generate TTN. Support all of types: W2W, W2D, D2W, D2D"
+msgstr ""
+"Генерація ТТН. Підтримка типів: Відділення-Відділення, Відділення-Адреса, "
+"Адреса-Адреса, Адреса-Відділення"
+
+msgid "Possibility of mass generation of TTN in one click"
+msgstr "Можливість масової генерації ТТН в один клік"
+
+msgid ""
+"Print TTN of all types: A4 (1 copy), A4 (2 copies), sticker 85x85, sticker "
+"100х100 (zebra)"
+msgstr ""
+"Друк ТТН усіх типів: А4 (1 копія), А4 (2 копії), наклейка 85х85, наклейка "
+"100х100 (зебра)"
+
+msgid "Automatic email notifications after TTN creation"
+msgstr "Автоматичне email повідомлення після створення ТТН"
+
+msgid "Premium support"
+msgstr "Premium підтримка"
+
+msgid "Become PRO"
+msgstr "Стати PRO клієнтом"
+
+msgid "Select shipping address"
+msgstr "Вкажіть адресу доставки"
+
+msgid "to warehouse"
+msgstr "на відділення"
+
+msgid "to doors"
+msgstr "до дверей"
+
+msgid "Select area"
+msgstr "Оберіть область"
+
+msgid "Select city"
+msgstr "Оберіть місто"
+
+msgid "Select warehouse"
+msgstr "Оберіть відділення"
+
+msgid "Enter address"
+msgstr "Введіть адресу"
+
+msgid "Enter value for search"
+msgstr "Введіть значення для пошуку"
+
+msgid "Loading..."
+msgstr "Завантаження..."
+
+msgid "Load more"
+msgstr "Завантажити ще"
+
+msgid "Nothing found"
+msgstr "Нічого не знайдено"
+
+msgid "Enter more chars"
+msgstr "Введіть більше символів"
+
+msgid "Enter shipping address of Nova Poshta"
+msgstr "Виберіть адресу Нової Пошти"
+
+msgid "Nova Poshta"
+msgstr "Нова Пошта"
+
+msgid "Need address delivery"
+msgstr "Потрібна адресна доставка"
+
+#~ msgid "After order notes"
+#~ msgstr "После примечания к заказу"

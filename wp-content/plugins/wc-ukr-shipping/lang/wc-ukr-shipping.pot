@@ -1,0 +1,219 @@
+# Options page
+msgid "Settings"
+msgstr ""
+
+msgid "Documentation"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "General"
+msgstr ""
+
+msgid "Shipping"
+msgstr ""
+
+msgid "Translates"
+msgstr ""
+
+msgid "API key for Nova Poshta"
+msgstr ""
+
+msgid "Display language of cities and departments"
+msgstr ""
+
+msgid "Russian"
+msgstr ""
+
+msgid "Ukrainian"
+msgstr ""
+
+msgid "Use new UI"
+msgstr ""
+
+msgid "We recommend to enable this setting as the old UI will be removed in version 2.0"
+msgstr ""
+
+msgid "Show poshtomats"
+msgstr ""
+
+msgid "Load translates from"
+msgstr ""
+
+msgid "Plugin settings"
+msgstr ""
+
+msgid "Wordpress localization files"
+msgstr ""
+
+msgid "If you are using language plugins such as WPML or Polylang - select \"Wordpress localization files\" option"
+msgstr ""
+
+msgid "Color of spinner in frontend"
+msgstr ""
+
+# Warehouse loader
+msgid "Warehouses data of Nova Poshta"
+msgstr ""
+
+msgid "Last update date:"
+msgstr ""
+
+msgid "Status:"
+msgstr ""
+
+msgid "Not completed"
+msgstr ""
+
+msgid "Completed"
+msgstr ""
+
+msgid "Unknown"
+msgstr ""
+
+msgid "Update warehouses"
+msgstr ""
+
+msgid "Continue update"
+msgstr ""
+
+msgid "Load areas..."
+msgstr ""
+
+msgid "Load cities..."
+msgstr ""
+
+msgid "Load warehouses..."
+msgstr ""
+
+msgid "Warehouses db updated successfully"
+msgstr ""
+# End warehouse loader
+
+msgid "Shipping cost"
+msgstr ""
+
+msgid "Shipping block position on checkout page"
+msgstr ""
+
+msgid "Default section"
+msgstr ""
+
+msgid "Additional section"
+msgstr ""
+
+msgid "Enable address shipping"
+msgstr ""
+
+msgid "Save last customer address"
+msgstr ""
+
+msgid "This option is not working with old UI"
+msgstr ""
+
+msgid "Shipping method name"
+msgstr ""
+
+msgid "Shipping block title"
+msgstr ""
+
+msgid "Placeholder of select area field"
+msgstr ""
+
+msgid "Placeholder of select city field"
+msgstr ""
+
+msgid "Placeholder of select warehouse field"
+msgstr ""
+
+msgid "Label of address selector"
+msgstr ""
+
+msgid "Placeholder of address field"
+msgstr ""
+
+msgid "Empty result text"
+msgstr ""
+
+msgid "Settings saved successfully!"
+msgstr ""
+
+# PRO features
+msgid "Get more features from our PRO version"
+msgstr ""
+
+msgid "Full address shipping integration (using Nova Poshta address API)"
+msgstr ""
+
+msgid "Automatic calculation of shipping costs. Supporting W2W, W2D and COD delivery calculation"
+msgstr ""
+
+msgid "Shipping calculation based on order total"
+msgstr ""
+
+msgid "Ability to customize separated shipping costs for address shipping"
+msgstr ""
+
+msgid "Ability to generate TTN. Support all of types: W2W, W2D, D2W, D2D"
+msgstr ""
+
+msgid "Possibility of mass generation of TTN in one click"
+msgstr ""
+
+msgid "Print TTN of all types: A4 (1 copy), A4 (2 copies), sticker 85x85, sticker 100х100 (zebra)"
+msgstr ""
+
+msgid "Automatic email notifications after TTN creation"
+msgstr ""
+
+msgid "Premium support"
+msgstr ""
+
+msgid "Become PRO"
+msgstr ""
+
+msgid "Select shipping address"
+msgstr ""
+
+msgid "to warehouse"
+msgstr ""
+
+msgid "to doors"
+msgstr ""
+
+msgid "Select area"
+msgstr ""
+
+msgid "Select city"
+msgstr ""
+
+msgid "Select warehouse"
+msgstr ""
+
+msgid "Enter address"
+msgstr ""
+
+msgid "Enter value for search"
+msgstr ""
+
+msgid "Loading..."
+msgstr ""
+
+msgid "Load more"
+msgstr ""
+
+msgid "Nothing found"
+msgstr ""
+
+msgid "Enter more chars"
+msgstr ""
+
+msgid "Enter shipping address of Nova Poshta"
+msgstr ""
+
+msgid "Nova Poshta"
+msgstr ""
+
+msgid "Need address delivery"
+msgstr ""

@@ -1,0 +1,46 @@
+{
+    "packages": [
+        {
+            "name": "kirillbdev/wcus-core",
+            "version": "v1.0.5",
+            "version_normalized": "1.0.5.0",
+            "source": {
+                "type": "git",
+                "url": "git@gitlab.com:wordpress-products/wcus-core.git",
+                "reference": "efc6b33a7d844c84e972bff09649b480db394640"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/wordpress-products%2Fwcus-core/repository/archive.zip?sha=efc6b33a7d844c84e972bff09649b480db394640",
+                "reference": "efc6b33a7d844c84e972bff09649b480db394640",
+                "shasum": ""
+            },
+            "time": "2021-05-20T19:07:27+00:00",
+            "type": "package",
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "kirillbdev\\WCUSCore\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "kirillbdev\\WCUSCore\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "GPLv3"
+            ],
+            "authors": [
+                {
+                    "name": "kirillbdev",
+                    "email": "kirill.babinec@gmail.com"
+                }
+            ],
+            "description": "Core package of WC Ukr Shipping pluigns",
+            "install-path": "../kirillbdev/wcus-core"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}

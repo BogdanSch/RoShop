@@ -1,0 +1,15 @@
+# START YOAST BLOCK
+# ---------------------------
+User-agent: *
+Disallow: /wp-admin 
+Disallow: /wp-includes
+Disallow: /wp-content/plugins 
+Disallow: /wp-content/cache
+Disallow: /wp-content/themes 
+Disallow: /wp-login.php 
+Disallow: /?s= 
+Disallow: /search/
+Allow: /wp-admin/admin-ajax.php
+Sitemap: http://shop-wp-bs.1gb.ua/sitemap_index.xml
+# ---------------------------
+# END YOAST BLOCK

@@ -10,6 +10,6 @@ Disallow: /wp-login.php
 Disallow: /?s= 
 Disallow: /search/
 Allow: /wp-admin/admin-ajax.php
-Sitemap: http://shop-wp-bs.1gb.ua/sitemap_index.xml
+Sitemap: http://http://localhost/Projects/Wordpress/shop-wp-bs/sitemap_index.xml
 # ---------------------------
 # END YOAST BLOCK

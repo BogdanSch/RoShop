@@ -1,0 +1,12 @@
+2023-04-22T17:31:47+00:00 CRITICAL Cannot redeclare bbloomer_simplify_checkout_virtual() (previously declared in C:\Programs\Xampp\htdocs\Projects\Wordpress\shop-wp-bs\wp-content\themes\storefront-child\functions.php:6) in C:\Programs\Xampp\htdocs\Projects\Wordpress\shop-wp-bs\wp-content\themes\storefront\functions.php on line 90
+
+2023-04-22T17:33:14+00:00 CRITICAL Cannot redeclare bbloomer_simplify_checkout_virtual() (previously declared in C:\Programs\Xampp\htdocs\Projects\Wordpress\shop-wp-bs\wp-content\themes\storefront-child\includes\store.php:2) in C:\Programs\Xampp\htdocs\Projects\Wordpress\shop-wp-bs\wp-content\themes\storefront\functions.php on line 90
+
+2023-04-22T17:33:19+00:00 CRITICAL Cannot redeclare bbloomer_simplify_checkout_virtual() (previously declared in C:\Programs\Xampp\htdocs\Projects\Wordpress\shop-wp-bs\wp-content\themes\storefront-child\includes\store.php:2) in C:\Programs\Xampp\htdocs\Projects\Wordpress\shop-wp-bs\wp-content\themes\storefront\functions.php on line 90
+
+2023-04-22T17:34:00+00:00 CRITICAL Cannot redeclare bbloomer_simplify_checkout_virtual() (previously declared in C:\Programs\Xampp\htdocs\Projects\Wordpress\shop-wp-bs\wp-content\themes\storefront-child\includes\store.php:2) in C:\Programs\Xampp\htdocs\Projects\Wordpress\shop-wp-bs\wp-content\themes\storefront\functions.php on line 90
+
+2023-04-22T17:34:14+00:00 CRITICAL Cannot redeclare bbloomer_simplify_checkout_virtual() (previously declared in C:\Programs\Xampp\htdocs\Projects\Wordpress\shop-wp-bs\wp-content\themes\storefront-child\includes\store.php:2) in C:\Programs\Xampp\htdocs\Projects\Wordpress\shop-wp-bs\wp-content\themes\storefront\functions.php on line 90
+
+2023-04-22T17:34:22+00:00 CRITICAL Cannot redeclare bbloomer_simplify_checkout_virtual() (previously declared in C:\Programs\Xampp\htdocs\Projects\Wordpress\shop-wp-bs\wp-content\themes\storefront-child\includes\store.php:2) in C:\Programs\Xampp\htdocs\Projects\Wordpress\shop-wp-bs\wp-content\themes\storefront\functions.php on line 90
+

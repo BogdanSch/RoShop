@@ -8,3 +8,52 @@
     Version: 1.1
     Text Domain: storefront-child
 */
+::-webkit-scrollbar {
+	width: 7px;
+	background-color: rgb(224, 224, 224);
+}
+::-webkit-scrollbar-thumb {
+	background: rgb(143, 143, 143);
+	border-radius: 50px;
+}
+.storefront-sorting{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: start;
+}
+.menu-toggle{
+	background-color: #b534b3 !important;
+}
+.orderby, .wpfFilterContent select{
+		border-radius: 10px;
+    text-shadow: none;
+    padding: 15px;
+    font-size: 16px;
+    box-shadow: none;
+		margin-right: 15px;
+}
+ul.products .spinner, .la-spinner, .wpfIconPreview .spinner, .wpfLoaderIconTemplate .spinner, .woobewoo-filter-loader.spinner{
+	background-image: url('http://shop-wp-bs.1gb.ua/wp-content/uploads/2023/03/loader.gif') !important;
+}
+span.ui-slider-handle.ui-corner-all.ui-state-default{
+	border: none;
+	border: 1px solid #e8e8e8 ;
+	border-radius: 20px;
+}
+.search-field{
+	border-radius: 30px;
+}
+.sub-menu, .widget_shopping_cart, .site-header-cart .widget_shopping_cart .buttons, .site-header-cart .widget_shopping_cart .total{
+	background-color: #9c2cb3 !important;
+}
+.remove_from_cart_button::before{
+	color: #fff !important;
+}
+.storefront-handheld-footer-bar a::before{
+	color: #000;
+}
+.storefront-handheld-footer-bar a span{
+	color: #000 !important;
+	font-weight: 700;
+}

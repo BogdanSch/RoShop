@@ -293,13 +293,13 @@ if (!function_exists('woofilterInstallBaseMsg')) {
 	function woofilterInstallBaseMsg() {
 		if ( class_exists('FrameWpf') ) {
 			if ( !FrameWpf::_()->proVersionCompare(WPF_PRO_REQUIRES, '>=') ) {
-				$plugName = 'WooCommerce Product Filter by WooBeWoo';
+				$plugName = 'WooCommerce Product Filter by WBW';
 				$plugWpUrl = 'https://wordpress.org/plugins/woo-product-filter/';
 				echo '<div class="notice error is-dismissible"><p><strong>
 					Please install latest PRO version of ' . esc_html($plugName) . ' plugin (requires at least ' . esc_html(WPF_PRO_REQUIRES) . ').
 					In this way you will have full and upgraded PRO version of ' . esc_html($plugName) . '.</strong></p></div>';
 			} else if (FrameWpf::_()->getModule('options')->getModel()->get('start_indexing') == 2) {
-				$plugName = 'WooCommerce Product Filter by WooBeWoo';
+				$plugName = 'WooCommerce Product Filter by WBW';
 				$plugWpUrl = 'https://wordpress.org/plugins/woo-product-filter/';
 				echo '<div class="notice error is-dismissible"><p><strong>
 					The plugin ' . esc_html($plugName) . ' started indexing the product database metadata.

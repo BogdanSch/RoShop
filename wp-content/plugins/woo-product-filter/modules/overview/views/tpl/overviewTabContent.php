@@ -3,22 +3,12 @@
 ?>
 <section class="woobewoo-bar">
 	<div class="wpf-overview-title">
-		<?php esc_html_e('Welcome to WooBeWoo Product Filter', 'woo-product-filter'); ?>
+		<?php esc_html_e('Welcome to WBW Product Filter', 'woo-product-filter'); ?>
 	</div>
 	<div class="woobewoo-clear"></div>
 </section>
 <section>
 	<div class="woobewoo-item woobewoo-panel wpf-overview-panel">
-		<div class="wpf-overview-block">
-			<div class="wpf-overview-block-body wpf-ads-reward">
-				<div class="wpf-overview-center">
-					<input type="text" class="wpf-overview-input" name="wpf-promo" readonly value="woobewoomax">
-					<a class="wpf-overview-button button" href="https://woobewoo.com/plugins/reward-points-for-woocommerce/#license" target="_blank">
-						<?php esc_html_e('GET PLUGIN', 'woo-product-filter'); ?>
-					</a>
-				</div>
-			</div>
-		</div>
 		<?php 
 		if ($this->isWeek) {
 			include_once 'overviewFeedback.php';
@@ -121,9 +111,9 @@
 				</div>
 				<div class="wpf-overview-body-text">
 					<a href="https://woobewoo.com/pricing/" target="_blank">
-						<?php esc_html_e('All WooBeWoo plugins are in PRO version with premium support and future updates/add-ons.', 'woo-product-filter'); ?>
+						<?php esc_html_e('All WBW plugins are in PRO version with premium support and future updates/add-ons.', 'woo-product-filter'); ?>
 						<br />
-						<?php esc_html_e('As well as any new plugins or add-ons released by the WooBeWoo team in the future.', 'woo-product-filter'); ?>
+						<?php esc_html_e('As well as any new plugins or add-ons released by the WBW team in the future.', 'woo-product-filter'); ?>
 					</a>
 				</div>
 			</div>
@@ -136,10 +126,10 @@
 		<div class="wpf-overview-block">
 			<div class="wpf-overview-block-header">
 				<div class="wpf-overview-header-title">
-					<?php esc_html_e('More plugins by WooBeWoo', 'woo-product-filter'); ?>
+					<?php esc_html_e('More plugins by WBW', 'woo-product-filter'); ?>
 				</div>
 				<div class="wpf-overview-header-desc">
-					<?php esc_html_e('WooBeWoo it’s the Ready-made NoCode WooCommerce store solutions from top WordPress developers', 'woo-product-filter'); ?>
+					<?php esc_html_e('WBW it’s the Ready-made NoCode WooCommerce store solutions from top WordPress developers', 'woo-product-filter'); ?>
 				</div>
 			</div>
 			<div class="wpf-overview-block-body">
@@ -167,7 +157,7 @@
 							</div>
 							<div class="wpf-overview-body-text">
 								<a href="https://woobewoo.com/plugins/woo-currency/" target="_blank">
-									<?php esc_html_e('Free Currency Switcher WordPress plugin by Woobewoo allows the customers of your WooCommerce store to switch products prices easily to any currencies and get their rates converted in real-time! You can convert any currency you require and add as many currencies as you need.', 'woo-product-filter'); ?>
+									<?php esc_html_e('Free Currency Switcher WordPress plugin by WBW allows the customers of your WooCommerce store to switch products prices easily to any currencies and get their rates converted in real-time! You can convert any currency you require and add as many currencies as you need.', 'woo-product-filter'); ?>
 								</a>
 							</div>
 						</div>

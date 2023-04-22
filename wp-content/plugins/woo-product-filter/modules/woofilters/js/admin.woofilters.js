@@ -535,11 +535,14 @@
 				jQuery(".f_show_inputs_enabled_position").show();
 				jQuery(".f_show_inputs_enabled_currency").show();
 			} else {
+				var curSlider = jQuery('[name="f_price_show_currency_slider"]');
 				jQuery(".f_show_inputs_enabled_tooltip").hide();
 				jQuery(".f_show_inputs_enabled_position").hide();
 				jQuery(".f_show_inputs_enabled_currency").hide();
-				jQuery("[name='f_currency_position']").val('before');
-				jQuery("[name='f_currency_show_as']").val('symbol');
+				if (curSlider.length == 0 || !curSlider.prop('checked')) {
+					jQuery("[name='f_currency_position']").val('before');
+					jQuery("[name='f_currency_show_as']").val('symbol');
+				}
 				jQuery("[name='f_price_tooltip_show_as']").prop("checked",false);
 				jQuery("[name='f_price_tooltip_show_as']").attr("checked",false);
 			}

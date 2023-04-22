@@ -34,6 +34,7 @@
 
 					if ( taxonomy_exists( 'pwb-brand' ) || taxonomy_exists( 'product_brand' ) ) {
 						$selectOptions['brand'] = esc_attr__( 'Brand Page', 'woo-product-filter' ) . $labelPro;
+						$selectOptions['custom_pwb'] = esc_attr__( 'Specific Brand Page', 'woo-product-filter' ) . $labelPro;
 					}
 
 					HtmlWpf::selectbox('settings[display_on_page]', array(
@@ -93,6 +94,46 @@
 						<?php
 						HtmlWpf::checkboxToggle( 'settings[display_child_cat]', array(
 							'checked' => $this->getFilterSetting( $this->settings['settings'], 'display_child_cat', false )
+						) );
+					else :
+						?>
+						<span class="wpfProLabel"><a href="<?php echo esc_url( $this->proLink . '?utm_source=&utm_medium=&utm_campaign=' ); ?>" target="_blank"><?php esc_html_e( 'PRO Option', 'woo-product-filter' ); ?></a></span>
+					<?php
+					endif;
+					?>
+				</div>
+				
+				<?php $classHidden = 'custom_pwb' != $displayOnPage ? 'wpfHidden' : ''; ?>
+				<div class="settings-value settings-w100 <?php echo esc_attr($classHidden); ?>" data-select="settings[display_on_page]" data-select-value="custom_pwb">
+					<?php
+					if ( $isPro ) :
+						$brandList = $this->getFilterSetting( $this->settings['settings'], 'display_pwb_list', '' );
+						list( $brandDisplay ) = FrameWpf::_()->getModule( 'woofilters' )->getCategoriesDisplay('pwb-brand');
+						if ( is_array( $brandList ) ) {
+							$brandList = isset( $brandList[0] ) ? $brandList[0] : '';
+						}
+						HtmlWpf::selectlist( 'settings[display_pwb_list][]', array(
+							'options' => $brandDisplay,
+							'value'   => explode( ',', $brandList ),
+						) );
+					else :
+						?>
+						<span class="wpfProLabel "><a href="<?php echo esc_url( $this->proLink . '?utm_source=&utm_medium=&utm_campaign=' ); ?>" target="_blank"><?php esc_html_e( 'PRO Option', 'woo-product-filter' ); ?></a></span>
+					<?php
+					endif;
+					?>
+				</div>
+
+				<div class="settings-value settings-w100 <?php echo esc_attr( $classHidden ); ?>" data-select="settings[display_on_page]" data-select-value="custom_pwb">
+					<?php
+					if ( $isPro ) :
+						esc_html_e( 'Include Child Brands', 'woo-product-filter' );
+						?>
+						<i class="fa fa-question woobewoo-tooltip no-tooltip"
+						   title="<?php echo esc_attr( __( 'The filter will be displayed on all child brands', 'woo-product-filter' ) ); ?>"></i>
+						<?php
+						HtmlWpf::checkboxToggle( 'settings[display_child_brand]', array(
+							'checked' => $this->getFilterSetting( $this->settings['settings'], 'display_child_brand', false )
 						) );
 					else :
 						?>

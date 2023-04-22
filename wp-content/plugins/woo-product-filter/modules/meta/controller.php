@@ -2,9 +2,15 @@
 class MetaControllerWpf extends ControllerWpf {
 
 	protected $_code = 'meta';
+	
+	public function doMetaIndexingFree() {
+		return $this->doMetaIndexing(false);
+	}
 
-	public function doMetaIndexing() {
-		check_ajax_referer('wpf-save-nonce', 'wpfNonce');
+	public function doMetaIndexing($realAjax = true) {
+		if ($realAjax) {
+			check_ajax_referer('wpf-save-nonce', 'wpfNonce');
+		}
 		if (!current_user_can('manage_options')) {
 			wp_die();
 		}

@@ -25,6 +25,10 @@ class MetaWpf extends ModuleWpf {
 		$param = FrameWpf::_()->getModule('options')->getModel()->get('disable_autoindexing');
 		return false === $param ? 0 : ( (int) $param );
 	}
+	public function isDisabledAutoindexingBySS() {
+		$param = FrameWpf::_()->getModule('options')->getModel()->get('disable_autoindexing_by_ss');
+		return false === $param ? 0 : ( (int) $param );
+	}
 
 	public function recalcAfterImporting( $steps ) {
 		$step = ReqWpf::getVar('step');
@@ -38,7 +42,9 @@ class MetaWpf extends ModuleWpf {
 		$opts = array_merge(array(
 			'start_indexing' => array(
 				'label' => esc_html__('Start indexing product parameters', 'woo-product-filter'),
-				'desc' => esc_html__('For correct and fast operation of filters, the plugin creates index tables for product parameters. This tables are automatically rebuilt by editing / creating products. But if you edited products with third-party plugins or methods, and/or noticed that the filter does not work correctly, then click this button to forcefully rebuild the index tables. If you have a lot of products, the process may take a while.', 'woo-product-filter'),
+				'desc' => esc_html__('For correct and fast operation of filters, the plugin creates index tables for product parameters. This tables are automatically rebuilt by editing / creating products. But if you edited products with third-party plugins or methods, and/or noticed that the filter does not work correctly, then click this button to forcefully rebuild the index tables. If you have a lot of products, the process may take a while.', 'woo-product-filter') .
+					'<br><br>' . esc_html__('There is a way to start indexing with a URL: ', 'woo-product-filter') . '<br><b>/wp-admin/admin-ajax.php?mod=meta&action=doMetaIndexingFree&pl=wpf&reqType=ajax</b><br>' .
+					esc_html__('Add a parameter &inCron=1 if you need to run in the background (via cron).', 'woo-product-filter'),
 				'html' => 'startMetaButton',
 				'def' => '',
 				'add_sub_opts' => '<div class="woobewoo-check-group"><input type="checkbox" id="wpfStartIndexingCron"><label class="woobewoo-group-label">' . esc_html__( 'run in background ', 'woo-product-filter' ) . '</label></div>',
@@ -46,6 +52,12 @@ class MetaWpf extends ModuleWpf {
 			'disable_autoindexing' => array(
 				'label' => esc_html__( 'Disable automatic calculation of index tables after editing products.', 'woo-product-filter' ),
 				'desc'  => esc_html__( 'This can be useful if you add products only through imports. Then after importing, just do a full recalculation of the index tables once by clicking the button above.', 'woo-product-filter' ),
+				'html'  => 'checkboxHiddenVal',
+				'def'   => '0',
+			),
+			'disable_autoindexing_by_ss' => array(
+				'label' => esc_html__( 'Disable automatic calculation of index tables after product stock changes.', 'woo-product-filter' ),
+				'desc'  => esc_html__( 'This can be useful when changing inventory status in bulk. Then after changing, just do a full recalculation of the index tables once by clicking the button above.', 'woo-product-filter' ),
 				'html'  => 'checkboxHiddenVal',
 				'def'   => '0',
 			),
@@ -156,7 +168,9 @@ class MetaWpf extends ModuleWpf {
 	}
 
 	public function recalcProductStockStatus( $productId ) {
-		$this->getModel()->recalcMetaValues( $productId, array( 'meta_key' => '_stock_status' ) );
+		if ( ! $this->isDisabledAutoindexingBySS() ) {
+			$this->getModel()->recalcMetaValues( $productId, array( 'meta_key' => '_stock_status' ) );
+		}
 	}
 
 	public function calcNeededMetaValues( $one = false ) {

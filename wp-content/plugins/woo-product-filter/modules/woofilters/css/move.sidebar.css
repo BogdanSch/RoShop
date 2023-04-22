@@ -10,7 +10,8 @@
 	.woocommerce-page .content_wrapper,
 	.woocommerce-page #col-mask,
 	#main-content .content-area,
-	#main #content-wrap
+	#main #content-wrap,
+	.eltdf-content .eltdf-grid-row
 	{
 		-js-display: flex;
 		display: -webkit-box;
@@ -31,7 +32,8 @@
 	.woocommerce-page #content,
 	.woocommerce-page .sections_group,
 	.woocommerce-page .content-box,
-	#main-sidebar-container #main
+	#main-sidebar-container #main,
+	.eltdf-page-content-holder
 	{
 		-webkit-box-ordinal-group: 2;
 		-moz-box-ordinal-group: 2;
@@ -44,7 +46,8 @@
 	aside#mk-sidebar,
 	.woocommerce-page #sidebar,
 	.woocommerce-page .sidebar,
-	#main-sidebar-container #sidebar
+	#main-sidebar-container #sidebar,
+	.eltdf-sidebar-holder
 	{
 		-webkit-box-ordinal-group: 1;
 		-moz-box-ordinal-group: 1;

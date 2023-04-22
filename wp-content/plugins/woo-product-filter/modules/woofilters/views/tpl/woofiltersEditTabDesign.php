@@ -157,6 +157,21 @@
 		</div>
 		<div class="row row-settings-block">
 			<div class="settings-block-label col-xs-4 col-sm-3">
+				<?php esc_html_e('Don\'t load Fontawesome', 'woo-product-filter'); ?>
+				<i class="fa fa-question woobewoo-tooltip" title="<?php echo esc_attr__('Attention! Do not enable this option if you are not sure. It is worth using if your theme loads the Fontawesome library on its own, or if you plan to change filter icons to custom ones with CSS.', 'woo-product-filter'); ?>"></i>
+			</div>
+			<div class="settings-block-values col-xs-8 col-sm-9">
+				<div class="settings-value settings-w100" data-no-preview="1">
+					<?php 
+						HtmlWpf::checkboxToggle('settings[disable_fontawesome_loading]', array(
+							'checked' => ( isset($this->settings['settings']['disable_fontawesome_loading']) ? (int) $this->settings['settings']['disable_fontawesome_loading'] : '' )
+						));
+						?>
+				</div>
+			</div>
+		</div>
+		<div class="row row-settings-block">
+			<div class="settings-block-label col-xs-4 col-sm-3">
 				<?php esc_html_e('Use theme styles', 'woo-product-filter'); ?>
 				<i class="fa fa-question woobewoo-tooltip" title="<?php echo esc_attr__('Disable the use of custom plugin styles for filter elements. This option does not work in admin preview.', 'woo-product-filter'); ?>"></i>
 			</div>

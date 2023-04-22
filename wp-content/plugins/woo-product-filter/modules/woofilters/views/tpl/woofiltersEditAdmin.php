@@ -28,13 +28,7 @@ $catArgs = array(
 $brandDisplay = array();
 $parentBrands = array();
 if (taxonomy_exists('pwb-brand')) {
-	$productBrands = get_terms( 'pwb-brand', $catArgs );
-	foreach ($productBrands as $c) {
-		if (0 == $c->parent) {
-			array_push($parentBrands, $c->term_id);
-		}
-		$brandDisplay[$c->term_id] = $c->name;
-	}
+	list($brandDisplay, $parentBrands) = $this->getModule()->getCategoriesDisplay('pwb-brand');
 }
 
 ?>

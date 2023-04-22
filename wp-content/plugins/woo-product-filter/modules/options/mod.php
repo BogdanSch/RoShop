@@ -190,6 +190,12 @@ class OptionsWpf extends ModuleWpf {
 							'def'   => '0',
 							'html'  => 'checkboxHiddenVal',
 						),
+						'disable_plugin_sorting' => array(
+							'label' => esc_html__( 'Disable plugin sorting', 'woo-product-filter' ),
+							'desc'  => esc_html__( 'If this option is enabled, then the Product Filter by WBW will not use its sorting functionality. Woocommerce or other plugins sorting algorithms will be used.', 'woo-product-filter' ),
+							'def'   => '0',
+							'html'  => 'checkboxHiddenVal',
+						),
 					),
 				),
 			));

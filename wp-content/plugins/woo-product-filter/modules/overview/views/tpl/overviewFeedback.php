@@ -9,10 +9,10 @@
 				<div class="wpf-overview-block">
 					<div class="wpf-overview-block-header">
 						<div class="wpf-overview-header-title">
-							<?php esc_html_e('Help improve WooBeWoo', 'woo-product-filter'); ?>
+							<?php esc_html_e('Help improve WBW', 'woo-product-filter'); ?>
 						</div>
 						<div class="wpf-overview-header-desc">
-							<?php esc_html_e('Stay up to date with news, life hacks, and new features from WooBeWoo. And also participate in surveys to improve plugins.', 'woo-product-filter'); ?>
+							<?php esc_html_e('Stay up to date with news, life hacks, and new features from WBW. And also participate in surveys to improve plugins.', 'woo-product-filter'); ?>
 						</div>
 					</div>
 					<div class="wpf-overview-block-body">

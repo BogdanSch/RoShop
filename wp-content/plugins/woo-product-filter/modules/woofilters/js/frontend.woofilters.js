@@ -3,7 +3,7 @@
 	function WpfFrontendPage() {
 		this.$obj = this;
 		this.noWoo = this.$obj.checkNoWooPage();
-		this.readyFuncs = ['.berocket_load_more_preload', 'woocommerce-product-bundle-hide', 'show_variation', '.variations_form', 'yith_infs_start', 'flatsome_infinite_scroll'];
+		this.readyFuncs = ['.berocket_load_more_preload', 'woocommerce-product-bundle-hide', 'show_variation', '.variations_form', 'yith_infs_start', 'flatsome_infinite_scroll','.dipl_woo_products_pagination_wrapper'];
 		this.isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 && navigator.userAgent && navigator.userAgent.indexOf('CriOS') == -1 && navigator.userAgent.indexOf('FxiOS') == -1;
 		this.disableScrollJs = true;
 		return this.$obj;
@@ -1210,6 +1210,7 @@
 			//if ($queryVarsSettings['paginate_type'] == 'query' || $queryVarsSettings['paginate_type'] == 'shortcode') {
 			_thisObj.QStringWork($queryVarsSettings['paginate_base'], '', noWooPage, $filterWrapper, 'remove');
 			_thisObj.QStringWork('product-page', '', noWooPage, $filterWrapper, 'remove');
+			_thisObj.QStringWork('shopPage', '', noWooPage, $filterWrapper, 'remove');
 
 			var $woocommerceSettings = {};
 			if (jQuery('.wpfFilterWrapper[data-filter-type="wpfSortBy"]').length == 0) {
@@ -2026,6 +2027,13 @@
 		if (jQuery(_thisObj.defaultProductSelector).closest('.et_pb_shop').length && jQuery(_thisObj.defaultProductSelector).find('[loading="lazy"]').length == 0) {
 			heightIdenticalInRow('.et_pb_shop li.product');
 		}
+		
+		// Improve compatibility with 'Woocommerce Products Per Page'
+		jQuery('.form-wppp-select').each( function () {
+			var $form = jQuery(this);
+			$form.attr('action', jQuery('#'+_thisObj.currentLoadId).attr('data-hide-url'));
+			$form.find('input[type="hidden"]').remove();
+		});
 
 
 		// event for custom javascript hook, example: document.addEventListener('wpfAjaxSuccess', function(event) {console.log('Custom js');});

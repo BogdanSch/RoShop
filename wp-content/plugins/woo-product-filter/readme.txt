@@ -1,10 +1,10 @@
-=== Product Filter by WooBeWoo ===
-Contributors: woobewoo
+=== Product Filter by WBW ===
+Contributors: WBW
 Donate link: https://woobewoo.com/product/woocommerce-filter/
 Tags: product filter, WooCommerce product filter, shop filter, e-commerce filter, WooCommerce filter, product, filter 
 Requires at least: 3.4.0
-Tested up to: 6.1
-Stable tag: 2.3.1
+Tested up to: 6.2
+Stable tag: 2.3.3
  
 Filter products by categories, attributes, prices, and more. 100% Elementor Compatibility. Shoppers easily find products with WooCommerce Product Filter
 
@@ -23,15 +23,15 @@ Display filters in any convenient way: radio button list (single select) dropdow
 Make filtering even more comfortable by enabling AJAX search or let the process start as soon as the user selects all the options and presses the filtering button.
 
 **[Elementor Compatibility](https://woobewoo.com/documentation/elementor-compatibility/ "Elementor Compatibility")**
-WooCommerce Product Filter compatible with Ellementor. With this option, you can create a product filter directly in the Elementor. All the functions of the Product Filter by WooBeWoo will be available directly in the Elementor tab.
+WooCommerce Product Filter compatible with Ellementor. With this option, you can create a product filter directly in the Elementor. All the functions of the Product Filter by WBW will be available directly in the Elementor tab.
 
-Video tutorial on how to set up WooCommerce product filter by WooBeWoo
+Video tutorial on how to set up WooCommerce product filter by WBW
 [youtube https://youtu.be/5uFBMl5OLW0] 
 
 Product filters are the key things that allow your customers to view the products in a particular way and easily find the necessary items.
  
 **[Statistics](https://woobewoo.com/documentation/product-filter-statistics/ "Analytics")**
-Product Filter by WooBeWoo comes with a detailed filter statistics section to make it easier to collect, analyze data and subsequently support global business growth. Gather information about filtering and searching for products by your buyer and convert them into business solutions.
+Product Filter by WBW comes with a detailed filter statistics section to make it easier to collect, analyze data and subsequently support global business growth. Gather information about filtering and searching for products by your buyer and convert them into business solutions.
 
 **[Live preview](https://woobewoo.com/documentation/woocommerce-filter-main-settings/ "Main Settings")**
 With Live Preview, the results will appear in the panel right at the moment you make changes to settings.
@@ -61,12 +61,12 @@ Ask your questions in the [support forum](https://wordpress.org/support/plugin/w
 == Installation ==
 
 a) VIA FTP
-A download zip archive with WooCommerce Product Filter by WooBeWoo plugin
+A download zip archive with WooCommerce Product Filter by WBW plugin
 Extract files
 Copy the folder with the plugin
 Open via FTP folder \wp-content\plugins\
 Paste plugin folder into here
-Go to admin panel => Plugins => WooCommerce Product Filter by WooBeWoo press activate 
+Go to admin panel => Plugins => WooCommerce Product Filter by WBW press activate 
 
 B) DIRECT UPLOAD VIA ADMIN AREA
 A download zip archive with plugin
@@ -77,7 +77,7 @@ Press Activate button
 
 C) VIA WORDPRESS REPOSITORY
 Navigate to admin panel => Plugins => Add new
-Type \" WooCommerce Filter Plugin by Woobewoo"\ in the search field
+Type \" WooCommerce Filter Plugin by WBW"\ in the search field
 Choose our plugin from the list and click \"Install\"
 Wait until you get the notification installation went successfully
 Press Activate button
@@ -113,7 +113,7 @@ Depending on the type and specificity of the filter, you can configure:
 * Show search and more.
 
 = How to add product filter to the store? = 
-After creating the filter you can [add a filer it in 2 ways](https://woobewoo.com/documentation/how-to-add-woocommerce-product-filter-to-shop?utm_source=wordpress&utm_medium=addfiltertothestore&utm_campaign=filter "How to add WooCommerce product filter"): with shortcode and PHP code ( you can find them under the settings tab) or add Woo Product Filter widget.
+After creating the filter you can [add a filer it in 2 ways](https://woobewoo.com/documentation/how-to-add-woocommerce-product-filter-to-shop?utm_source=wordpress&utm_medium=addfiltertothestore&utm_campaign=filter "How to add WooCommerce product filter"): with shortcode and PHP code ( you can find them under the settings tab) or add WBW Product Filter widget.
 
 * **Input shortcode**
 Copy Shortcode and paste it to your website content. Product Filter plugin will display the filter you created on the appropriate post/page using settings you tuned in this filter.
@@ -142,9 +142,28 @@ If you have problems with the work of plugin or something is not working as it s
 If none of this advice helps you, contact us via [support form on our website](https://woobewoo.com/contact-us?utm_source=wordpress&utm_medium=contactus&utm_campaign=wooproducttable "Contact us")and describe your problem.
 
 = WooCommerce Product Filter plugin is not available in my language. What shall I do? =
-You may help us translate the plugin into your language and get the PRO version of the plugin for free as soon as it is released. If this method seems to be too complicated, please send us a request and we will let you know as soon as the WooBeWoo Filter plugin will be available in your localization.
+You may help us translate the plugin into your language and get the PRO version of the plugin for free as soon as it is released. If this method seems to be too complicated, please send us a request and we will let you know as soon as the WBW Filter plugin will be available in your localization.
 
 == Changelog ==
+
+= 2.3.3 =
+ * Added a link to start indexing
+ * Fixed option Move sidebar to top for mobile for Allston theme
+ * Fixed Autocomplete search filter
+ * Added compatibility with Divi Plus
+ * Added option for disabled reindexing by product stock changes
+ * Fixed page reseting by filtering
+ * Fixed styles loading
+ * Added compatibility with plugin Woocommerce Products Per Page and added option Display on Perfect Brands Page
+ * Minor issues fix
+
+= 2.3.2 =
+ * Fixed call button in floating mode
+ * Added compatibility with Qi Addons For Elementor
+ * Added option for disable loading Fontawesome library
+ * Fixed bug when temporary tables not allowed in DB
+ * Hid last license error
+ * Rebranding
 
 = 2.3.1 =
  * Small code fix for Safari
@@ -887,7 +906,7 @@ You may help us translate the plugin into your language and get the PRO version 
 * Fixed pagination for shortcode [products]
 * Change CDN URL
 * Add the custom number of decimals optionality for a price range filter
-* Remove woobewoo-for-all-admin style
+* Remove for-all-admin style
 * Fixes for color tooltips
 * Change updater link
 
@@ -1141,7 +1160,7 @@ You may help us translate the plugin into your language and get the PRO version 
 * Added Show Count for Dropdown-lists
 * Screenshots update
 * Add outofstock, onbackorder features
-* Add custom loader woobewoo logo
+* Add custom loader WBW logo
 
 = 1.0.5 =
 * Add new types of price skins

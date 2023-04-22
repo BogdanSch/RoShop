@@ -20,7 +20,7 @@ class OverviewViewWpf extends ViewWpf {
 		FrameWpf::_()->addScript('wpf.admin.notice.dismis', $this->getModule()->getModPath() . 'js/admin.notice.dismis.js');
 
 		$this->assign( 'message',
-			'<b>' . esc_html__('New! Reward points and loyalty plugin from WooBeWoo', 'woo-product-filter') . '</b><br/>' .
+			'<b>' . esc_html__('New! Reward points and loyalty plugin from WBW', 'woo-product-filter') . '</b><br/>' .
 			esc_html__('Set rewards in the form of bonus points for the purchase of good, signup, writing review and more. Create delayed campaigns with automatic reward points accrual based on triggers/conditions.', 'woo-product-filter') .
 			' <a href="https://woobewoo.com/plugins/reward-points-for-woocoommerce/" target="_blank">' . esc_html__('More Info', 'woo-product-filter') . '</a>'
 		);

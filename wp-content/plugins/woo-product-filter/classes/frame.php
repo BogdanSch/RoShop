@@ -159,7 +159,7 @@ class FrameWpf {
 			<tr class="plugin-update-tr wpf-pro-plugin-tr<?php echo esc_attr($active); ?>">
 				<td colspan="<?php echo esc_attr($colspan); ?>" class="plugin-update colspanchange">
 					<div class="update-message notice inline notice-error notice-alt">
-						<p><?php echo 'Current version of Free (Base) plugin WooCommerce Product Filter by WooBeWoo requires version of Woo Product Filter PRO plugin at least ' . esc_html(WPF_PRO_REQUIRES) . '.'; ?></p>
+						<p><?php echo 'Current version of Free (Base) plugin WooCommerce Product Filter by WBW requires version of WBW Product Filter PRO plugin at least ' . esc_html(WPF_PRO_REQUIRES) . '.'; ?></p>
 					</div>
 				</td>
 			</tr>

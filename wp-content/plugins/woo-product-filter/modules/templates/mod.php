@@ -130,11 +130,13 @@ class TemplatesWpf extends ModuleWpf {
 		}
 		$this->loadFontAwesome();
 	}
-	public function loadJqueryUi() {
-			FrameWpf::_()->addStyle('jquery-ui', WPF_CSS_PATH . 'jquery-ui.min.css');
-			FrameWpf::_()->addStyle('jquery-ui.structure', WPF_CSS_PATH . 'jquery-ui.structure.min.css');
-			FrameWpf::_()->addStyle('jquery-ui.theme', WPF_CSS_PATH . 'jquery-ui.theme.min.css');
+	public function loadJqueryUi( $slider = true ) {
+		FrameWpf::_()->addStyle('jquery-ui', WPF_CSS_PATH . 'jquery-ui.min.css');
+		FrameWpf::_()->addStyle('jquery-ui.structure', WPF_CSS_PATH . 'jquery-ui.structure.min.css');
+		FrameWpf::_()->addStyle('jquery-ui.theme', WPF_CSS_PATH . 'jquery-ui.theme.min.css');
+		if ($slider) {
 			FrameWpf::_()->addStyle('jquery-slider', WPF_CSS_PATH . 'jquery-slider.css');
+		}
 	}
 	public function loadJqGrid() {
 		static $loaded = false;

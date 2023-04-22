@@ -20,6 +20,10 @@ class Woofilters_ElementorWidgetWpf extends Widget_Base {
 		if (static::$scriptsLoaded) {
 			return;
 		}
+		
+		if (!is_admin() && !(\Elementor\Plugin::$instance->preview->is_preview_mode())) {
+			return;
+		}
 
 		$isPro = FrameWpf::_()->isPro();
 		$modPath = FrameWpf::_()->getModule('woofilters')->getModPath();

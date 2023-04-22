@@ -120,7 +120,18 @@ class WoofiltersWpf extends ModuleWpf {
 		}
 		//Integration with Advanced Woo Search
 		add_filter( 'aws_search_results_products_ids', array( $this, 'my_aws_search_results_products_ids') );
+		//Qi Addons For Elementor
+		add_filter( 'qi_addons_for_elementor_filter_query_params', array( $this, 'replaceArgsIfBuilderGridUsed') );
+		
+		//Divi Plus
+		add_filter('dipl_woo_products_args', array( $this, 'addFilterAgrsToQuery'));
 	}
+	
+	public function addFilterAgrsToQuery( $args ) {
+		$args = $this->loadShortcodeProductsFilter( $args, array('wpf-compatibility' => 1) );
+		return $args;
+	}
+
 	public function my_aws_search_results_products_ids( $ids ) {
 		$q = new WP_Query( DispatcherWpf::applyFilters( 'beforeFilterExistsTermsWithEmptyArgs', array(
 			'post_type'  => 'product',
@@ -283,7 +294,7 @@ class WoofiltersWpf extends ModuleWpf {
 
 	public function replaceArgsIfBuilderUsed( $args ) {
 		// For Woocommerce Lookup table regeneration
-		if ( ( 'ids' == $args['return'] ) && ( 1 == $args['limit'] ) ) {
+		if ( !empty($args['return']) && !empty($args['limit']) && ( 'ids' == $args['return'] ) && ( 1 == $args['limit'] ) ) {
 			return $args;
 		}
 		// For TI WooCommerce Merkzettel
@@ -1062,7 +1073,7 @@ class WoofiltersWpf extends ModuleWpf {
 		if ( ReqWpf::getVar( 'wpf_order' ) ) {
 			add_filter( 'posts_clauses', array( $this, 'addClausesTitleOrder' ) );
 		}
-		if ( ReqWpf::getVar( 'orderby' ) ) {
+		if ( ReqWpf::getVar( 'orderby' ) && FrameWpf::_()->getModule('options')->get('disable_plugin_sorting') != 1 ) {
 			$orderby = ReqWpf::getVar( 'orderby' );
 			switch ( $orderby ) {
 				case 'price':
@@ -1202,8 +1213,8 @@ class WoofiltersWpf extends ModuleWpf {
 			$metaKeyId = $this->getMetaKeyId( '_price' );
 			if ( $metaKeyId ) {
 				$metaDataTable   = DbWpf::getTableName( 'meta_data' );
-				$args['join']   .= ' LEFT JOIN ' . $metaDataTable . ' AS wpf_price_order ON (wpf_price_order.product_id=' . $wpdb->posts . '.ID AND wpf_price_order.key_id=' . $metaKeyId . ')';
-				$args['orderby'] = ' wpf_price_order.val_dec DESC, wpf_price_order.product_id ';
+				$args['join'] .= ' LEFT JOIN (SELECT wpf_t.product_id, max(wpf_t.val_dec) as wpf_price FROM ' . $metaDataTable . ' as wpf_t WHERE wpf_t.key_id=' . $metaKeyId . ' GROUP BY wpf_t.product_id) as wpf_price_order ON (wpf_price_order.product_id=' . $wpdb->posts . '.ID)';
+				$args['orderby'] = ' wpf_price_order.wpf_price DESC, ' . $wpdb->posts . '.ID ';
 			} else {
 				$args['join'] .= ' LEFT JOIN ' . $wpdb->postmeta . ' as wpf_price_order ON (wpf_price_order.post_id=' . $wpdb->posts . ".ID AND wpf_price_order.meta_key='_price')";
 				$args['orderby'] = ' CAST(wpf_price_order.meta_value AS DECIMAL(20,3)) DESC, ' . $wpdb->posts . '.ID ';
@@ -1304,7 +1315,7 @@ class WoofiltersWpf extends ModuleWpf {
 
 			$this->addPreselectedParams();
 			
-			if ( ReqWpf::getVar( 'all_products_filtering' ) && ( '-' != $filterKey )) {
+			if ( ReqWpf::getVar( 'all_products_filtering' ) && ( ( '-' != $filterKey ) || !empty($attributes['wpf-compatibility']) ) ) {
 				$exclude = array( 'paged', 'posts_per_page', 'post_type', 'wc_query', 'orderby', 'order', 'fields' );
 				foreach ( $args as $queryVarKey => $queryVarValue ) {
 					if ( ! in_array( $queryVarKey, $exclude ) ) {
@@ -1373,7 +1384,7 @@ class WoofiltersWpf extends ModuleWpf {
 					$this->shortcodeWCQueryFiltered[ $filterKey ] = $args;
 				}
 
-				if ( ReqWpf::getVar( 'orderby' ) ) {
+				if ( ReqWpf::getVar( 'orderby' ) && FrameWpf::_()->getModule('options')->get('disable_plugin_sorting') != 1 ) {
 					$orderby = ReqWpf::getVar( 'orderby' );
 					switch ( $orderby ) {
 						case 'price':
@@ -1608,7 +1619,7 @@ class WoofiltersWpf extends ModuleWpf {
 							if ( $metaValueId ) {
 								$whereNot = empty( $clauses['whereNot'] ) ? '' : ' AND ' . $clauses['whereNot'];
 								$clauses  = array(
-									'join'  => array( ' LEFT JOIN `' . $varTable . '` as wpf_var_temp ON (wpf_var_temp.id=' . $wpdb->posts . '.ID) LEFT JOIN ' . $metaDataTable . ' as wpf_pr_type__#i ON (wpf_pr_type__#i.product_id=' . $wpdb->posts . '.ID AND wpf_pr_type__#i.key_id=' . $metaKeyId . ')' ),
+									'join'  => array( ' LEFT JOIN ' . $varTable . ' as wpf_var_temp ON (wpf_var_temp.id=' . $wpdb->posts . '.ID) LEFT JOIN ' . $metaDataTable . ' as wpf_pr_type__#i ON (wpf_pr_type__#i.product_id=' . $wpdb->posts . '.ID AND wpf_pr_type__#i.key_id=' . $metaKeyId . ')' ),
 									'where' => array( ' AND ((wpf_pr_type__#i.val_id!=' . $metaValueId . $whereNot . ') OR wpf_var_temp.id is not null)' )
 								);
 								$this->addFilterClauses( $clauses, false );
@@ -1691,6 +1702,27 @@ class WoofiltersWpf extends ModuleWpf {
 					$parent_id = get_queried_object_id();
 					if ( in_array( $parent_id, $cats ) ) {
 						$displayCategory = true;
+					}
+				} elseif ( 'custom_pwb' === $displayOnPage ) {
+					$brandList = empty( $settings['display_pwb_list'] ) ? '' : $settings['display_pwb_list'];
+					if ( is_array( $brandList ) ) {
+						$brandList = isset( $brandList[0] ) ? $brandList[0] : '';
+					}
+
+					$brands = explode( ',', $brandList );
+
+					$displayChildBrand = $this->getFilterSetting( $settings, 'display_child_brand', false );
+					if ( $displayChildBrand ) {
+						$brandChild = array();
+						foreach ( $brands as $brand ) {
+							$brandChild = array_merge( $brandChild, get_term_children( $brand, 'pwb-brand' ) );
+						}
+						$brands = array_merge( $brands, $brandChild );
+					}
+
+					$parent_id = get_queried_object_id();
+					if ( in_array( $parent_id, $brands ) ) {
+						$displayBrand = true;
 					}
 				} elseif ( is_shop() || is_product_category() || is_product_tag() || is_customize_preview() ) {
 					if ( 'shop' === $displayOnPage || 'both' === $displayOnPage ) {
@@ -3426,14 +3458,14 @@ class WoofiltersWpf extends ModuleWpf {
 		return array( 0 => 'Default', 1 => 'h1', 2 => 'h2', 3 => 'h3', 4 => 'h4', 5 => 'h5' );
 	}
 
-	public function getCategoriesDisplay() {
+	public function getCategoriesDisplay( $tax = 'product_cat' ) {
 		$catArgs = array(
 			'orderby'    => 'name',
 			'order'      => 'asc',
 			'hide_empty' => false,
 		);
 
-		$productCategories = get_terms( 'product_cat', $catArgs );
+		$productCategories = get_terms( $tax, $catArgs );
 		$categoryDisplay   = array();
 		$parentCategories  = array();
 		foreach ( $productCategories as $c ) {
